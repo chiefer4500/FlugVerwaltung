@@ -23,17 +23,18 @@ class Flug {
 
     // 3. Objektmethode zur Berechnung der Auslastung (Verhältnis reservierte zu vorhandenen Sitzplaetzen)
     public double berechneAuslastung() {
-        if (anzahlSitzplaetze == 0) {
+        if (anzahlSitzplaetze == 0) {//um zu meiden Division durch null
             return 0.0;
         }
         return (double) anzahlReservierteSitzplaetze / anzahlSitzplaetze;
     }
 
     // 4. Klassenmethode zur Berechnung der Einnahmen eines Fluges
-    public static double berechneEinnahmen(Flug flug) {
+    public static double berechneEinnahmen(Flug flug) {//hier ist ein Objekt und kein Konstruktor
         if (flug == null) {
             return 0.0;
         }
+
         return flug.anzahlReservierteSitzplaetze * flug.flugpreis;
     }
 
